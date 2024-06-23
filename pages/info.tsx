@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 
 const Info = () => {
+  const router = useRouter()
   const [pages, setPages] = useState<number>(0)
   const [complexity, setComplexity] = useState<number>(0)
 
@@ -17,8 +18,7 @@ const Info = () => {
   }
 
   const handleSubmit = () => {
-    const router = useRouter()
-    router.push(`/result?pages=${pages}&complexity=${complexity}`)
+    router.push(`/results?pages=${pages}&complexity=${complexity}`)
   }
 
   return (
